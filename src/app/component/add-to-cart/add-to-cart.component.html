@@ -8,18 +8,22 @@
 
     @for (item of (cartItems$|async); track $index) {
         <div class="cart-item">
-            <img [src]="item.thumbnail" alt="Product Image" class="product-image">
+            <img [src]="item.product.thumbnail" alt="Product Image" class="product-image">
             <div class="product-details">
-                <p>{{item.title}}</p>
-                <p class="price">€{{item.price}}</p>
-                <div class="quantity-selector">
-                    <button class="minus-btn">−</button>
-                    <input type="text" value="1" class="quantity-input">
-                    <button  class="plus-btn">+</button>
-                </div>
-            </div>
+                <p>{{item.product.title}}</p>
+                <p class="price">€{{item.product.price}}</p>
 
-                <button  (click)="removeFromCart(item.id)" class="delete-btn">🗑️</button>
+                <div class="quantity-selector">
+                    <button (click)="decreaseCount(item.product.id)" class="minus-btn">−</button>
+                    <input type="text" [value]="item.count" class="quantity-input">
+                    <button (click)="increaseCount(item.product.id)" class="plus-btn">+</button>
+
+                </div>
+
+            </div>
+            <button (click)="removeFromCart(item.product)" class="delete-btn">🗑️</button>
+ 
+
             
 
         </div>
@@ -27,7 +31,7 @@
 
     <div class="total">
         <span>Total:</span>
-        <span class="total-amount">£65.00</span>
+        <span class="total-amount">{{totalPrice$|async |number: '2.0-1'}}</span>
     </div>
     <div class="cart-footer">
         <button class="view-bag-btn">View Bag ({{(cartItems$|async).length  }})</button>
