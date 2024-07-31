@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 import { AddToCartComponent } from "../add-to-cart/add-to-cart.component";
 import { ProductsService } from '../../core/api/products/products.service';
 import { AsyncPipe } from '@angular/common';
+import { clearCart } from '../../feature/state/product.action';
 
 @Component({
   selector: 'app-nav-bar',
@@ -17,10 +18,11 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent { 
-  constructor(private _ProductsService:ProductsService){}
+  constructor(private _ProductsService:ProductsService , private _store : Store){}
   searchControl = new FormControl();
   visible$ = this._ProductsService.visible
   showDialog() {
+    // this._store.dispatch(clearCart())
     this._ProductsService.setVisible(true)
   }
   }
