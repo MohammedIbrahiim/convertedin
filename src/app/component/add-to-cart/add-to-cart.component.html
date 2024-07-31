@@ -1,4 +1,4 @@
-<div class="mini-cart-popup">
+<div class="mini-cart-popup" >
     <div class="cart-header">
         <h2>My Cart</h2>
         <button class="close-btn" (click)="showDialog()">&times;</button>
@@ -6,28 +6,31 @@
 
     <div class="separator"></div>
 
-    @for (item of (cartItems$|async); track $index) {
-        <div class="cart-item">
-            <img [src]="item.product.thumbnail" alt="Product Image" class="product-image">
-            <div class="product-details">
-                <p>{{item.product.title}}</p>
-                <p class="price">€{{item.product.price}}</p>
-
-                <div class="quantity-selector">
-                    <button (click)="decreaseCount(item.product.id)" class="minus-btn">−</button>
-                    <input type="text" [value]="item.count" class="quantity-input">
-                    <button (click)="increaseCount(item.product.id)" class="plus-btn">+</button>
-
+    <div class="items-cart">
+        @for (item of (cartItems$|async); track $index) {
+            <div class="cart-item ">
+                <img [src]="item.product.thumbnail" alt="Product Image" class="product-image">
+                <div class="product-details">
+                    <p>{{item.product.title}}</p>
+                    <p class="price">€{{item.product.price}}</p>
+    
+                    <div class="quantity-selector">
+                        <button (click)="decreaseCount(item.product.id)" class="minus-btn">−</button>
+                        <input type="text" [value]="item.count" class="quantity-input">
+                        <button (click)="increaseCount(item.product.id)" class="plus-btn">+</button>
+    
+                    </div>
+    
                 </div>
-
+                <button (click)="removeFromCart(item.product)" class="delete-btn">🗑️</button>
+     
+    
+                
+    
             </div>
-            <button (click)="removeFromCart(item.product)" class="delete-btn">🗑️</button>
- 
+        }
+    </div>
 
-            
-
-        </div>
-    }
 
     <div class="total">
         <span>Total:</span>

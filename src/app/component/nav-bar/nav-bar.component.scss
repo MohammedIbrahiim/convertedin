@@ -23,5 +23,19 @@ nav{
         position: absolute;
         top: 42px;
         right: 0;
+        z-index: 999;
     }
+}
+
+.second-nav{
+    ul{
+        width: 70%;
+        li{
+            color: #101828;
+            font-weight: 600;
+            font-size: 13px;
+        }
+    }
+
+    background-color: #E6ECFC;
 }

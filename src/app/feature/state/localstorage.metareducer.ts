@@ -1,6 +1,6 @@
 import { ActionReducer, INIT, UPDATE } from '@ngrx/store';
 import { AppState } from '../../reducers';
-import { ProductState } from '.';
+import { ProductState } from './reducer';
 
 export function localStorageMetaReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return (state, action) => {

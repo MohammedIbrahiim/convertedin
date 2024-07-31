@@ -5,7 +5,7 @@ import { catchError, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { productAction } from './product-type';
 import { Store } from '@ngrx/store';
-import { ProductState } from '../state/index';
+import { ProductState } from './reducer';
 import { AppState } from '../../reducers';
 
 @Injectable()

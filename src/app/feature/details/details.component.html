@@ -1,123 +1,109 @@
-
-
-
-    <div>
-        <div class="container-fluid mt-5 px-5">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="row align-items-center">
-                        <div class="col-md-3">
-                            <div class="d-flex flex-column images ">
-                                @for (img of (product$|async)?.images ; track $index){
-                                    <img (click)="getImgSrc(img)" [src]="img" alt="">
-                                }
-                            </div>
-                        </div>
-                        <div class="col-md-8 main-img">
-                            <img [src]="img" class="w-100" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 second-div">
-                    <h5>{{ (product$|async)?.title }}</h5>
-                    <p class="modal-number">Model Number : CFI-1208A / CFI-1216A 01Y/CFI-1200A / CFI-1218A / CFI-1016A / CFI-1116A</p>
-                    <div class="d-flex align-items-center rate">
-                        <img src="/assets/Icon.png" alt="">
-                        <p>{{(product$|async)?.rating}}</p>
-                        <span>({{ (product$|async)?.reviews.length}})</span>
-                    </div>
-        
-                    <div class=" currency d-flex align-items-center mt-3 mb-4">
-                        <p class=" mb-0">EGP </p>
-                        <span>{{ (product$|async)?.price}}</span>
-                    </div>
-        
-                    <div class="delivery">
-                        <p class="">Free Delivery by Tomorrow</p>
-                        <p class="span">Order in 6 hrs 46 mins</p>
-                    </div>
-        
-        
-                    <div class="d-flex pay-details align-items-center justify-conent-between my-3">
-                        <p class="mb-0">Monthly payment plans from EGP 778</p>
-                        <a href="" class="ms-2"> View more details</a>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="d-flex ">
-                        <div class="col-md-3 btn btn-qty">Qty1</div>
-                  
-                        @if ((product$ | async); as product) {
-                            <div class="col-md-8 btn btn-add ms-3" (click)="  addToCart(product)">Add To Cart</div>
-                        }
-           
-        
-                    </div>
-                </div>
-                <div class="col-md-3 ">
-                    <div class="d-flex align-items-center third-div">
-                        <div>
-                            <img src="/assets/free_returns_usp.svg.png" alt="">
-                        </div>
-                        <div class="ms-3 ">
-                            <h6>FREE RETURNS</h6>
-                            <span>Get free returns on eligible items</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center third-div">
-                        <div>
-                            <img src="/assets/trusted_shipping_usp_v2.svg.png" alt="">
-                        </div>
-                        <div class="ms-3">
-                            <h6>FREE RETURNS</h6>
-                            <span>Free shipping when you spend EGP 200 and
-                                above on express items</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center third-div">
-                        <div>
-                            <img src="/assets/div.sc-c6543dcc-2.png" alt="">
-                        </div>
-                        <div class="ms-3">
-                            <h6>FREE RETURNS</h6>
-                            <span>Your data is always protected</span>
-                        </div>
-                    </div>
-                </div>
+<div>
+  <div class="container-fluid mt-5 px-5">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <div class="d-flex flex-column images">
+              @for (img of (product$|async)?.images ; track $index){
+              <img (click)="getImgSrc(img)" [src]="img" alt="" />
+              }
             </div>
-        
+          </div>
+          <div class="col-md-8 main-img">
+            <img [src]="img" class="w-100" alt="" />
+          </div>
         </div>
-        
-        
-        <div class="container  overview-content mt-5 mb-3">
-            <div class="row">
-                <h5>Overview</h5>
-                <p>{{ (product$|async)?.description}}</p>
-            
-            </div>
-        
+      </div>
+      <div class="col-md-4 second-div">
+        <h5>{{ (product$ | async)?.title }}</h5>
+        <p class="modal-number">
+          Model Number : CFI-1208A / CFI-1216A 01Y/CFI-1200A / CFI-1218A /
+          CFI-1016A / CFI-1116A
+        </p>
+        <div class="d-flex align-items-center rate">
+          <img src="/assets/Icon.png" alt="" />
+          <p>{{ (product$ | async)?.rating }}</p>
+          <span>({{ (product$ | async)?.reviews.length }})</span>
         </div>
-        <div class="container  overview-content">
-            <h5>Highlights</h5>
-        
-            <ul>
-                <li>
-                    test
-                </li>
-                <li>
-                    test
-                </li>
-                <li>
-                    test
-                </li>
-                <li>
-                    test
-                </li>
-                <li>
-                    test
-                </li>
-            </ul>
-        
-        </div>
-    </div>             
 
+        <div class="currency d-flex align-items-center mt-3 mb-4">
+          <p class="mb-0">EGP</p>
+          <span>{{ (product$ | async)?.price }}</span>
+        </div>
+
+        <div class="delivery">
+          <p class="">Free Delivery by Tomorrow</p>
+          <p class="span">Order in 6 hrs 46 mins</p>
+        </div>
+
+        <div
+          class="d-flex pay-details align-items-center justify-conent-between my-3"
+        >
+          <p class="mb-0">Monthly payment plans from EGP 778</p>
+          <a href="" class="ms-2"> View more details</a>
+        </div>
+        <div></div>
+        <div class="d-flex">
+          <div class="col-md-3 btn btn-qty">Qty1</div>
+
+          @if ((product$ | async); as product) {
+          <div class="col-md-8 btn btn-add ms-3" (click)="addToCart(product)">
+            Add To Cart
+          </div>
+          }
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="d-flex align-items-center third-div">
+          <div>
+            <img src="/assets/free_returns_usp.svg.png" alt="" />
+          </div>
+          <div class="ms-3">
+            <h6>FREE RETURNS</h6>
+            <span>Get free returns on eligible items</span>
+          </div>
+        </div>
+        <div class="d-flex align-items-center third-div">
+          <div>
+            <img src="/assets/trusted_shipping_usp_v2.svg.png" alt="" />
+          </div>
+          <div class="ms-3">
+            <h6>FREE RETURNS</h6>
+            <span
+              >Free shipping when you spend EGP 200 and above on express
+              items</span
+            >
+          </div>
+        </div>
+        <div class="d-flex align-items-center third-div">
+          <div>
+            <img src="/assets/div.sc-c6543dcc-2.png" alt="" />
+          </div>
+          <div class="ms-3">
+            <h6>FREE RETURNS</h6>
+            <span>Your data is always protected</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container overview-content mt-5 mb-3">
+    <div class="row">
+      <h5>Overview</h5>
+      <p>{{ (product$ | async)?.description }}</p>
+    </div>
+  </div>
+  <div class="container overview-content mb-5">
+    <h5>Highlights</h5>
+
+    <ul>
+      <li>test</li>
+      <li>test</li>
+      <li>test</li>
+      <li>test</li>
+      <li>test</li>
+    </ul>
+  </div>
+</div>

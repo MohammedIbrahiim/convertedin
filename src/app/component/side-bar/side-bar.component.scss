@@ -4,6 +4,10 @@ $titleColor: #344054;
   .category {
     max-height: 250px;
     overflow-y: scroll;
+    .selected{
+      color:  #475467;
+      ;
+    }
   }
 
   .category::-webkit-scrollbar {
@@ -59,6 +63,7 @@ $titleColor: #344054;
       .p-checkbox-label {
         color: $titleColor;
         font-weight: 600;
+        margin-left: 12px;
       }
     }
   }
@@ -66,11 +71,15 @@ $titleColor: #344054;
   .price-range {
     .range-input {
       .p-inputtext {
-        width: 87px;
+        width: 100%;
         height: 40px;
       }
     }
   }
+}
+
+::ng-deep .p-slider-horizontal .p-slider-handle{
+  top: -6px !important;
 }
 .active{
   color: #1d2939;

@@ -42,7 +42,7 @@ export const productReducer = createReducer(
   on(productAction.loadProductDetailsFailure, (state, { error }) => ({ ...state, error })),
 
 
-
+//  add cart
   on(productAction.clearCart, state => ({
     ...state,
     items: []
@@ -95,7 +95,6 @@ export const productReducer = createReducer(
   }),
 
   on(productAction.removeFromCart, (state, { product }) => {
-    // Optionally handle complete removal of product
     return {
       ...state,
       items: state.items.filter(item => item.product.id !== product.id)
@@ -107,8 +106,6 @@ export const productReducer = createReducer(
 
   
 
-/**   ...state,
-    items:state.items?[...state.items, product]:[state.items,product] */
 
 export function reducer(state: ProductState | undefined, action: Action) {
   return productReducer(state, action);

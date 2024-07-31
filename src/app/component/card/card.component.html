@@ -1,3 +1,6 @@
+
+
+<p class="item-selected">{{ (data$ |async)?.data?.products.length}} Results for "<span> {{categoryName }}</span>"</p>
 <div class="container">
     <div class="row d-flex justify-content-center">
 
@@ -27,12 +30,11 @@
 
 
 
-<div class="card flex justify-content-center">
+<!-- <div class="card flex justify-content-center">
     <p-paginator 
         (onPageChange)="onPageChange($event)" 
         [first]="first" 
         [rows]="rows" 
         [totalRecords]="2" 
         [rowsPerPageOptions]="[10, 20, 30]" />
-</div>
-
+</div> -->

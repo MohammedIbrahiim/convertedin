@@ -1,11 +1,21 @@
-<div class="side-bar  container ">
+<div class="side-bar container">
   <div class="category">
-    <p class="title">Category</p>
+    <div class="d-flex  align-items-center">
+      <img src="../../../assets/home-line.png" alt=""> 
+      <p class="selected mb-0 ms-2">/   {{categoryName}} </p>
+    </div>
 
+
+    <p class="title">Category</p>
 
     <ul class="list-unstyled">
       @for (item of category; track $index) {
-        <li (click)="getCategoryName(item.slug)"  [ngClass]="{'active': categoryName==item.slug}">{{item.name}}</li>
+      <li
+        (click)="getCategoryName(item.slug)"
+        [ngClass]="{ active: categoryName == item.slug }"
+      >
+        {{ item.name }}
+      </li>
       }
     </ul>
   </div>
@@ -13,66 +23,70 @@
   <div class="brand">
     <p class="title">Brand</p>
     <div class="flex-column d-flex justify-content-center gap-3">
-      <div class="d-flex align-items-center justify-content-between ">
-        <p-checkbox class="label" label="Samsung" name="mobile" value="Samsung" />
+      <div class="d-flex align-items-center justify-content-between">
+        <p-checkbox
+          class="label"
+          label="Samsung"
+          name="mobile"
+          value="Samsung"
+        />
         <span class="count">12</span>
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <p-checkbox class="label" label="Sony" name="mobile" value="Sony" />
         <span class="count">12</span>
-
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <p-checkbox class="label" label="Xiaomi" name="mobile" value="Xiaomi" />
         <span class="count">12</span>
-
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <p-checkbox class="label" label="Apple" name="mobile" value="Apple" />
         <span class="count">12</span>
-
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <p-checkbox class="label" label="Canon" name="mobile" value="Canon" />
         <span class="count">12</span>
-
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <p-checkbox class="label" label="HUAWEI" name="mobile" value="HUAWEI" />
         <span class="count">12</span>
-
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <p-checkbox class="label" label="HP" name="mobile" value="HP" />
         <span class="count">12</span>
-
       </div>
       <div class="d-flex align-items-center justify-content-between">
         <p-checkbox class="label" label="Lenovo" name="mobile" value="Lenovo" />
         <span class="count">12</span>
-
       </div>
     </div>
   </div>
 
   <div class="price-range my-5">
     <p class="title">Price Range (EGP)</p>
-    <div class="d-flex justify-content-between align-items-center">
-        <span>From</span>
-        <div class="card range-input flex justify-content-center">
-            <input type="text" pInputText />
-        </div>
-        <span>to</span>
-        <div class="card range-input flex justify-content-center">
-            <input type="text" pInputText/>
-        </div>
+    <div class="row d-flex justify-content-between align-items-center">
+      <span class="col-lg-2 col-md-12">From</span>
+      <div class="col-lg-4 col-md-12  range-input flex justify-content-center">
+        <input type="text" pInputText />
+      </div>
+      <span class="col-lg-2 col-md-12">To</span>
+      <div class="col-lg-4 col-md-12  range-input flex justify-content-center">
+        <input type="text" pInputText />
+      </div>
     </div>
   </div>
 
   <div class="rating">
-
     <p class="title">Product Rating</p>
-    <p-slider (onChange)="changeSlider($event)" [(ngModel)]="rangeValues" [range]="true"
-    [max]="5" styleClass="w-14rem" />
+    <p-slider
+      (onChange)="changeSlider($event)"
+      [(ngModel)]="rangeValues"
+      [range]="true"
+      [max]="5"
+      styleClass="w-14rem"
+    />
   </div>
 </div>
+
+

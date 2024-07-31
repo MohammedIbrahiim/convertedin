@@ -7,7 +7,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { metaReducers, reducers } from './reducers';
-import * as productState from './feature/state'
+import * as productState from './feature/state/reducer'
 import { provideEffects } from '@ngrx/effects';
 import { CacheEffects } from './feature/state/product.effects';
 export const appConfig: ApplicationConfig = {

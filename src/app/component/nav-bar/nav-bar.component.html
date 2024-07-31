@@ -1,31 +1,53 @@
 <nav class="">
-    <div class="container-fluid px-5">
-        <div class="row  d-flex align-items-center ">
-            <div class="col-md-1">
-                <img src="../../../assets/Logo.png" alt="">
-            </div>
-            <div class="col-md-9">
-                <input [formControl]="searchControl"   type="text" class="w-100" name="" id="" placeholder="search for product">
-            </div>
-            <div class="col-md-1 d-flex align-items-center " role="button">
-                <img src="../../../assets/bookmark.png" alt="">
-                <span>Wishlist</span>
-            </div>
-            <div class="col-md-1 d-flex align-items-center cart-design" role="button" >
-                <img (click)=" showDialog()" src="../../../assets/Icons.png" alt="">
-                <span (click)=" showDialog()">cart</span>
-                @if (visible$|async) {
-                    <div class="my-cart" >
-
-                        <app-add-to-cart></app-add-to-cart>
-                    </div>
-                }
-
-
-
-            </div>
-
+  <div class="container-fluid px-5">
+    <div class="row d-flex align-items-center justify-content-between">
+      <div class="col-md-1">
+        <img src="../../../assets/Logo.png" alt="" />
+      </div>
+      <div class="col-lg-9 col-md-6">
+        <input
+          [formControl]="searchControl"
+          type="text"
+          class="w-100"
+          name=""
+          id=""
+          placeholder="search for product"
+        />
+      </div>
+      <div class="col-md-1 d-flex align-items-center" role="button">
+        <img src="../../../assets/bookmark.png" alt="" />
+        <span>Wishlist</span>
+      </div>
+      <div
+        class="col-md-1 d-flex align-items-center cart-design"
+        role="button"
+        (click)="onDialogClick($event)"
+      >
+        <img (click)="showDialog()" src="../../../assets/Icons.png" alt="" />
+        <span (click)="showDialog()">cart</span>
+        @if (visible$|async) {
+        <div class="my-cart">
+          <app-add-to-cart></app-add-to-cart>
         </div>
-
+        }
+      </div>
     </div>
+  </div>
 </nav>
+
+<div class="second-nav">
+
+  <ul  class="list-unstyled d-flex justify-content-between px-5  py-2">
+    <li>Electronics</li>
+    <li>Mobile</li>
+    <li>Men</li>
+    <li>Women</li>
+    <li>Home</li>
+    <li>Beauty & Health</li>
+    <li>Baby & Toys</li>
+    <li>SuperMarket</li>
+    <li>Sell On Platform</li>
+    <li>New Deals</li>
+  </ul>
+  
+</div>
