@@ -35,8 +35,9 @@ export const clearCart = createAction('[Cart] Clear Cart');
     props<{ product: any }>()
   );
 
-  export const removeFromCart = createAction(
-    '[Cart] Remove from Cart',
-    props<{ productId: number }>()
-  );
+  export const removeFromCart=createAction('[Product] Remove From Cart', props<{ product: any }>());
 
+
+ export const increaseCount= createAction('[Product] Increase Count', props<{ productId: number }>());
+ export const decreaseCount= createAction('[Product] Decrease Count', props<{ productId: number }>())
+ 
