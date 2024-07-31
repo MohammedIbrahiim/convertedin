@@ -1,0 +1,70 @@
+.card{
+    margin:10px 10px 10px 10px;
+    padding: 10px;
+    border: none;
+    .product-img{
+        height: 164.48px;
+    }
+    .content{
+        border-top: 3.46px solid #F2F4F7; 
+        .disc{
+            font-size: 12px;
+            font-weight: 500;
+            color: #344054;
+            margin-top: 5px;
+            height: 164.48px;
+            overflow-y: hidden;
+
+        }
+        .disc::-webkit-scrollbar {
+            width: 12px;
+          }
+        
+          .disc::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+          }
+        
+          .disc::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+          }
+
+        .currency{
+            p{
+                font-size: 9px;
+                color: #98A2B3;
+                font-weight: 500;
+                margin-right: 2px;
+            }
+            span{
+                font-size: 13px;
+                color: #1D2939;
+                font-weight: 700;
+            }
+
+            
+        }
+
+        .rate{
+            border-radius: 11.05px;
+            border: 0.69px solid #EAECF0;
+            padding: 0px 5px;
+            img{
+                width: 7.06px;
+                height: 6.73px;
+            }
+            p , span{
+                font-size: 9px;
+                margin-bottom: 0;
+            }
+            p{
+                color: #667085;
+                margin: 0px 3px;
+            }
+            span{
+                color: #D0D5DD;
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+$titleColor: #344054;
+
+.side-bar {
+  .category {
+    max-height: 250px;
+    overflow-y: scroll;
+  }
+
+  .category::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .category::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  .category::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+  ul {
+    li {
+      color: $titleColor;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+  }
+  .title {
+    color: #1d2939;
+    font-weight: 700;
+  }
+
+  .count {
+    background-color: #f9fafb;
+    color: $titleColor;
+    width: 30px;
+    font-weight: 500;
+    border-radius: 50%;
+    border: 1px solid #eaecf0;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $titleColor;
+  }
+
+  .price-range {
+    span {
+      color: #98a2b3;
+      font-weight: 600;
+    }
+  }
+}
+
+::ng-deep {
+  .brand {
+    .label {
+      .p-checkbox-label {
+        color: $titleColor;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .price-range {
+    .range-input {
+      .p-inputtext {
+        width: 87px;
+        height: 40px;
+      }
+    }
+  }
+}
+.active{
+  color: #1d2939;
+  font-weight: 700;
+}

@@ -1,0 +1,27 @@
+nav{
+    padding: 10px;
+    background-color: #002985;
+    span{
+        color: white;
+        margin-left: 5px;
+    }
+
+    input{
+        border: none;
+        text-indent: 10px;
+        border-radius: 4px;
+        height: 33px;
+        &:focus{
+            outline: 0;
+        }
+    }
+}
+
+.cart-design{
+    position: relative;
+    .my-cart{
+        position: absolute;
+        top: 42px;
+        right: 0;
+    }
+}

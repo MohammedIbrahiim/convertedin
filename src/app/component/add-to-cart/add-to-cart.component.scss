@@ -1,0 +1,130 @@
+.mini-cart-popup {
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h2 {
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.free-shipping {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.shipping-icon {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.product-details {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.product-details p {
+    margin: 0;
+}
+
+.price {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-input {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.minus-btn, .plus-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-bag-btn, .checkout-btn {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.view-bag-btn {
+    background-color: white;
+    border: 1px solid #000;
+}
+
+.checkout-btn {
+    background-color: black;
+    color: white;
+}
