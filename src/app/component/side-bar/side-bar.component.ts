@@ -11,12 +11,11 @@ import { select,Store } from '@ngrx/store';
 import { productAction } from '../../feature/state/product-type';
 import { ProductState} from '../../feature/state/reducer'
 import { Observable } from 'rxjs';
-import {MatSliderModule} from '@angular/material/slider';
 
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [CheckboxModule,SliderModule, FormsModule ,InputTextModule,NgClass,MatSliderModule],
+  imports: [CheckboxModule,SliderModule, FormsModule ,InputTextModule,NgClass],
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss'
 })

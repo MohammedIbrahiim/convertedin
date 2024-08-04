@@ -30,15 +30,15 @@ export class CardComponent implements OnInit{
 
 
 constructor(private _store: Store<{ product: ProductState }> , private _router:Router , private __destroyRef: DestroyRef) {
-  this.data$ = this._store.pipe(select(state => state.product));
-  this.page$ = this._store.pipe(select(state => state.product.page));
-  this.row$ = this._store.pipe(select(state => state.product.row));
+  this.data$ = this._store.pipe(select(state => state?.product));
+  this.page$ = this._store.pipe(select(state => state?.product.page));
+  this.row$ = this._store.pipe(select(state => state?.product.row));
   this.searchResults$ = this._store.pipe(select(selectSearchResults));
 }
 
 ngOnInit(): void {
   this.data$?.pipe(
-    map(products => products.filter),
+    map(products => products?.filter),
     tap(filter => this.categoryName =filter),
     takeUntilDestroyed(this.__destroyRef)
   ).subscribe();
@@ -50,7 +50,7 @@ ngOnInit(): void {
 
 
 loadData(): void {
-  const cacheTime = this._store.pipe(select(state => state.product.cacheTime));
+  const cacheTime = this._store.pipe(select(state => state?.product.cacheTime));
   const now = new Date().getTime();
 
   cacheTime.subscribe(time => {
